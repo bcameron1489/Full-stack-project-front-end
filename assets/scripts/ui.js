@@ -1,9 +1,24 @@
 'use strict'
 
 const onSignUpSuccess = function (data) {
-  $('.alerts').html('Thank you for signing up!')
+  console.log(data)
+}
+
+const onSignUpFailure = function (data) {
+  console.log(data)
+}
+
+const onSignInSuccess = function (data) {
+  console.log(data)
+}
+
+const onSignInFailure = function (data) {
+  console.log(data)
 }
 
 module.exports = {
-  onSignUpSuccess
+  onSignUpSuccess,
+  onSignUpFailure,
+  onSignInSuccess,
+  onSignInFailure
 }
