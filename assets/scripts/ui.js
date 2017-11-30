@@ -1,4 +1,5 @@
 'use strict'
+const store = require('./store')
 
 const onSignUpSuccess = function (data) {
   console.log(data)
@@ -10,6 +11,7 @@ const onSignUpFailure = function (data) {
 
 const onSignInSuccess = function (data) {
   console.log(data)
+  store.user = data.user
 }
 
 const onSignInFailure = function (data) {
@@ -17,11 +19,11 @@ const onSignInFailure = function (data) {
 }
 
 const onSignOutSuccess = function (data) {
-  console.log(data)
+  console.log('success')
 }
 
 const onSignOutFailure = function (data) {
-  console.log(data)
+  console.log('failure')
 }
 
 module.exports = {
