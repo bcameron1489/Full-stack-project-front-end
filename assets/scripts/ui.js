@@ -1,17 +1,17 @@
 'use strict'
 const store = require('./store')
 
-const onSignUpSuccess = function (data) {
-  console.log(data)
+const onSignUpSuccess = function () {
+  console.log('Success!')
 }
 
-const onSignUpFailure = function (data) {
-  console.log(data)
+const onSignUpFailure = function () {
+  console.log('Failure')
 }
 
 const onSignInSuccess = function (data) {
   console.log('Sign In Success!')
-  console.log(data)
+  $('.input').val('')
   store.user = data.user
 }
 
@@ -35,6 +35,15 @@ const changePasswordFailure = () => {
   console.log('failure')
 }
 
+const createPlayerSuccess = (data) => {
+  store.player = data.player
+}
+
+const createPlayerFailure = (error) => {
+  console.log('failure')
+  return error
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -43,5 +52,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  createPlayerSuccess,
+  createPlayerFailure
 }
