@@ -28,11 +28,10 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   const data = getFormFields(this)
-  console.log(data)
   event.preventDefault()
   api.changePassword(data)
-  // .then(ui.changePasswordSuccess)
-  // .catch(ui.changePasswordFailure)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
 }
 
 const addHandlers = () => {
