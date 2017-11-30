@@ -10,6 +10,7 @@ const onSignUpFailure = function (data) {
 }
 
 const onSignInSuccess = function (data) {
+  console.log('Sign In Success!')
   console.log(data)
   store.user = data.user
 }
@@ -26,13 +27,13 @@ const onSignOutFailure = function (data) {
   console.log('failure')
 }
 
-const changePasswordSuccess = (data) => {
-  console.log(data)
-}
-
-const changePasswordFailure = (data) => {
-  console.log('failure')
-}
+// const changePasswordSuccess = (data) => {
+//   console.log(data)
+// }
+//
+// const changePasswordFailure = (data) => {
+//   console.log('failure')
+// }
 
 module.exports = {
   onSignUpSuccess,
@@ -40,7 +41,7 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onSignOutFailure,
-  changePasswordSuccess,
-  changePasswordFailure
+  onSignOutFailure
+  // changePasswordSuccess,
+  // changePasswordFailure
 }
