@@ -52,10 +52,21 @@ const createPlayer = function (data) {
   })
 }
 
+const getPlayers = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/fantasy_players',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  createPlayer
+  createPlayer,
+  getPlayers
 }

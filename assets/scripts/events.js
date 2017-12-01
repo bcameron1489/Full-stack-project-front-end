@@ -42,12 +42,20 @@ const onCreatePlayer = function (event) {
     .catch(ui.addPlayerFailure)
 }
 
+const onGetPlayers = function (event) {
+  event.preventDefault()
+  api.getPlayers()
+    .then(ui.getPlayersSuccess)
+    .catch(ui.getPlayersFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#add-player').on('submit', onCreatePlayer)
+  $('#get-players').on('submit', onGetPlayers)
 }
 
 module.exports = {
@@ -56,5 +64,6 @@ module.exports = {
   onSignOut,
   onChangePassword,
   onCreatePlayer,
+  onGetPlayers,
   addHandlers
 }
