@@ -43,7 +43,7 @@ const changePassword = function (data) {
 
 const createPlayer = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/fantasy_players',
+    url: config.apiOrigin + '/players',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token

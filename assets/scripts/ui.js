@@ -49,9 +49,8 @@ const createPlayerSuccess = (data) => {
   store.player = data.player
 }
 
-const createPlayerFailure = (error) => {
-  console.log('failure')
-  return error
+const createPlayerFailure = (data) => {
+  console.log(data)
 }
 
 const getPlayersSuccess = function (data) {

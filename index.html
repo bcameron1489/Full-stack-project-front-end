@@ -44,10 +44,12 @@
           <input type="password" name="passwords[new]" class="input" placeholder="New Password">
         </fieldset>
       </form>
-      <form id="add-player" class="not-signed-in">
+      <form id="add-player">
       <fieldset>
-        <input type="submit" name="submit" value="Add">
-        <input type="text" name='player[target]' class="clear-input" placeholder='target player?'>
+        <input type="submit" name="submit" value="Create New Player">
+        <input type="text" name='player[name]' class="clear-input" placeholder='player name'>
+        <input type="text" name='player[team]' class="clear-input" placeholder='team name'>
+        <input type="text" name='player[bye]' class="clear-input" placeholder='bye week'>
       </fieldset>
     </form>
     <div class="players">
@@ -59,8 +61,8 @@
     </div></br>
       <div class="hide-content">
         <h1 class="alerts"></h1>
-          <p>Lorem .</p>
           <div class="content"></div>
+          <div class="create-content"></div>
       </div>
     </body>
 </html>
