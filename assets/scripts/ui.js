@@ -3,24 +3,33 @@ const store = require('./store')
 
 const onSignUpSuccess = function () {
   console.log('Success!')
+  $('.input').val('')
 }
 
 const onSignUpFailure = function () {
   console.log('Failure')
+  $('.input').val('')
 }
 
 const onSignInSuccess = function (data) {
   console.log('Sign In Success!')
   $('.input').val('')
+  $('.hide-sign-forms').hide()
+  $('#change-password').show()
+  $('#sign-out').show()
   store.user = data.user
 }
 
 const onSignInFailure = function (data) {
   console.log(data)
+  $('.input').val('')
 }
 
 const onSignOutSuccess = function (data) {
   console.log('success')
+  $('.hide-sign-forms').show()
+  $('#sign-out').hide()
+  $('#change-password').hide()
 }
 
 const onSignOutFailure = function (data) {

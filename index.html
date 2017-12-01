@@ -12,26 +12,31 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <form id="sign-up">
-        <fieldset>
-          <input type="submit" name="submit" value="Sign up!">
-          <input name="credentials[email]" type="text" class="input" placeholder="EMAIL">
-          <input name="credentials[password]" type="password" class="input" placeholder="PASSWORD">
-          <input name="credentials[password_confirmation]" type="password" class="input" placeholder="PASSWORD_CONFIRMATION">
-        </fieldset>
-      </form>
-      <form id="sign-in">
-        <fieldset>
-          <input type="submit" name="submit" value="Sign in!">
-          <input name="credentials[email]" type="text" class="input" placeholder="EMAIL">
-          <input name="credentials[password]" type="password" class="input" placeholder="PASSWORD">
-        </fieldset>
-      </form>
-      <form id="sign-out">
-        <fieldset>
-          <input type="submit" name="submit" value="Sign out!">
-        </fieldset>
-      </form>
+      <div class="hide-sign-forms">
+        <button class="show-login" type="button">Log In!</button>
+        <form id="sign-up" class="login-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="Sign up!">
+            <input name="credentials[email]" type="text" class="input" placeholder="EMAIL">
+            <input name="credentials[password]" type="password" class="input" placeholder="PASSWORD">
+            <input name="credentials[password_confirmation]" type="password" class="input" placeholder="PASSWORD_CONFIRMATION">
+          </fieldset>
+        </form>
+      </div>
+      <div class="hide-sign-forms">
+        <form id="sign-in" class="login-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="Sign in!">
+            <input name="credentials[email]" type="text" class="input" placeholder="EMAIL">
+            <input name="credentials[password]" type="password" class="input" placeholder="PASSWORD">
+          </fieldset>
+        </form>
+      </div>
+        <form id="sign-out">
+          <fieldset>
+            <input type="submit" name="submit" value="Sign out!">
+          </fieldset>
+        </form>
       <form id="change-password">
         <fieldset>
           <input type="submit" name="submit" value="Change Password!">
@@ -51,10 +56,10 @@
           <input type="submit" name="submit" value="show players">
         </fieldset>
       </form>
-    </div>
-  </br>
-      <h1 class="alerts"></h1>
-
-      <p>Lorem .</p>
+    </div></br>
+      <div class="hide-content">
+        <h1 class="alerts"></h1>
+          <p>Lorem .</p>
+      </div>
     </body>
 </html>

@@ -49,6 +49,25 @@ const onGetPlayers = function (event) {
     .catch(ui.getPlayersFailure)
 }
 
+// const hideContent = function () {
+//   $('.hide-content').hide()
+// }
+//
+// hideContent()
+
+const hideForms = function () {
+  $('#sign-out').hide()
+  $('#change-password').hide()
+}
+
+hideForms()
+
+const onLoginForms = function () {
+  $('.show-login').on('click', function () {
+    $('.hide-sign-forms').show()
+  })
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -65,5 +84,6 @@ module.exports = {
   onChangePassword,
   onCreatePlayer,
   onGetPlayers,
-  addHandlers
+  addHandlers,
+  onLoginForms
 }
