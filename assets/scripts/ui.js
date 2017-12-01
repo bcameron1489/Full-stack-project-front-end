@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./store')
+const showPlayersHtml = require('./templates/show-players-html.hbs')
 
 const onSignUpSuccess = function () {
   console.log('Success!')
@@ -55,6 +56,13 @@ const createPlayerFailure = (error) => {
 
 const getPlayersSuccess = function (data) {
   console.log(data)
+  $('#get-players').hide()
+  const showPlayers = showPlayersHtml({ players: data.players })
+  $('.content').append(showPlayers)
+  store.player = data.player
+  $('.remove').on('click', (event) => {
+    $(event.target).parent().parent().hide()
+  })
 }
 
 const getPlayersFailure = function () {

@@ -54,7 +54,7 @@ const createPlayer = function (data) {
 
 const getPlayers = function () {
   return $.ajax({
-    url: config.apiOrigin + '/fantasy_players',
+    url: config.apiOrigin + '/players',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
