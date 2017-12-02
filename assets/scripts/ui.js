@@ -1,6 +1,7 @@
 'use strict'
 const store = require('./store')
 const showPlayersHtml = require('./templates/show-players-html.hbs')
+const showUserPlayersHtml = require('./templates/show-user-players.hbs')
 
 const onSignUpSuccess = function () {
   console.log('Success!')
@@ -68,6 +69,25 @@ const getPlayersFailure = function () {
   console.log('failuire')
 }
 
+const userIndexSuccess = function (data) {
+  console.log(data)
+  const showUserPlayers = showUserPlayersHtml({ fantasy_players: data.fantasy })
+  $('.create-content').append(showUserPlayers)
+  store.fantasy = data.fantasy
+}
+
+const userIndexFailure = function () {
+  console.log('failuire')
+}
+
+const addUserPlayerSuccess = (data) => {
+  store.user.player = data.user.player
+}
+
+const addUserPlayerFailure = (data) => {
+  console.log(data)
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -80,5 +100,9 @@ module.exports = {
   createPlayerSuccess,
   createPlayerFailure,
   getPlayersSuccess,
-  getPlayersFailure
+  getPlayersFailure,
+  userIndexSuccess,
+  userIndexFailure,
+  addUserPlayerSuccess,
+  addUserPlayerFailure
 }

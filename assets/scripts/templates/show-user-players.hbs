@@ -1,0 +1,13 @@
+{{#each fantasy_players as |fantasy|}}
+
+  <ul data-id="{{fantasy.id}}"> <li>Id: {{fantasy.player.id}}</li> <li>Name: {{fantasy.player.name}}</li> <li>Team: {{fantasy.player.team}}</li>
+    <li>Bye: {{fantasy.player.bye}}</li><li>{{fantasy.target}}</li>
+  {{!-- <li>
+    {{#if player.description}}
+      {{player.description}}
+    {{else}}
+      No description.
+    {{/if}}
+  </li> --}}
+</ul>
+{{/each}}

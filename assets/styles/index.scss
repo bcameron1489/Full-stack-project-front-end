@@ -1,2 +1,14 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.user-index {
+  padding: 10px;
+  position: absolute;
+  right: 0;
+}
+
+.create-content {
+  padding: 10px;
+  position: absolute;
+  right: 0;
+}

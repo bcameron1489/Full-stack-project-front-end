@@ -33,6 +33,7 @@ const onChangePassword = function (event) {
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
+//  User actions
 
 const onCreatePlayer = function (event) {
   event.preventDefault()
@@ -47,6 +48,21 @@ const onGetPlayers = function (event) {
   api.getPlayers()
     .then(ui.getPlayersSuccess)
     .catch(ui.getPlayersFailure)
+}
+
+const onUserPlayersIndex = function (event) {
+  event.preventDefault()
+  api.indexUserPlayers()
+    .then(ui.userIndexSuccess)
+    .catch(ui.userIndexFailure)
+}
+
+const onAddUserPlayer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.addUserPlayer(data)
+    .then(ui.addUserPlayerSuccess)
+    .catch(ui.addUserPlayerFailure)
 }
 
 // const hideContent = function () {
@@ -75,6 +91,7 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#add-player').on('submit', onCreatePlayer)
   $('#get-players').on('submit', onGetPlayers)
+  $('#user-players').on('submit', onUserPlayersIndex)
 }
 
 module.exports = {
@@ -85,5 +102,7 @@ module.exports = {
   onCreatePlayer,
   onGetPlayers,
   addHandlers,
-  onLoginForms
+  onLoginForms,
+  onUserPlayersIndex,
+  onAddUserPlayer
 }

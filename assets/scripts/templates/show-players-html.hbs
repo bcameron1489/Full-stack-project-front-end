@@ -1,6 +1,6 @@
 {{#each players as |player|}}
 
-  <ul data-id="{{player.id}}"> <li>Id: {{player.id}} </li> <li>Name: {{player.name}}</li> <li>Team: {{player.team}}</li> <li>Bye: {{player.bye}}</li>
+  <ul data-id="{{player.id}}"> <li>Id: {{player.id}}</li> <li>Name: {{player.name}}</li> <li>Team: {{player.team}}</li> <li>Bye: {{player.bye}}</li>
   {{!-- <li>
     {{#if player.description}}
       {{player.description}}
@@ -8,6 +8,7 @@
       No description.
     {{/if}}
   </li> --}}
+<li><button class="add">save player</button></li>
 <li><button class="remove">remove</button></li>
 </ul>
 {{/each}}
