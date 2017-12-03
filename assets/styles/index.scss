@@ -1,22 +1,28 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.user-index {
-  padding: 10px;
-  position: absolute;
-  right: 0;
-}
+
 
 .create-content {
   margin-right: 20px;
   padding: 10px;
-  position: absolute;
   right: 0;
+}
+
+.response {
+  float: left;
+  margin-top: 60px;
+  width: 49%;
 }
 
 .user-alerts {
   margin-right: 20px;
   padding: 10px;
   position: absolute;
+  right: 0;
+}
+
+.user-index {
+  padding: 10px;
   right: 0;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Fantasy Tracker App</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,8 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <div class="user-alerts">
-      </div>
+      <header>
         <button class="show-login" type="button">Log In!</button>
         <form id="sign-up" class="login-forms">
           <fieldset>
@@ -42,46 +41,59 @@
           <input type="password" name="passwords[new]" class="input" placeholder="New Password">
         </fieldset>
       </form>
-    <div class="players">
-      <form id="get-players" class="client-forms">
-        <fieldset>
-          <input type="submit" name="submit" value="show players">
-        </fieldset>
-      </form>
-    </div></br>
-    <form id="add-user-player" class="client-forms">
-    <fieldset>
-      <input type="submit" name="submit" value="Add To My Players">
-      <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='id'>
-    </fieldset>
-  </form>
-  <div class="delete-resource-player">
-    <form id="delete-player" class="client-forms">
-      <fieldset>
-        <input type="submit" name="submit" value="delete player">
-        <input type="text" name='fantasy_player[id]' class="clear-input" placeholder='fantasy player id'>
-      </fieldset>
-    </form>
-  </div>
-    <div class="user-index">
-      <form id="user-players" class="client-forms">
-        <fieldset>
-          <input type="submit" name="submit" value="get your players">
-        </fieldset>
-      </form>
-      <form id="update-user" class="client-forms">
-         <fieldset>
-           <input type="submit" name="submit" value="Target Player">
-           <input type="text" name='fantasy_player[id]' class="clear-input" placeholder='fantasy id'>
-           <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='player id'>
-           <input type="text" name='fantasy_player[target]' class="clear-input" placeholder='target?'>
-         </fieldset>
-       </form>
-    </div></br>
-      <div class="hide-content">
-        <h1 class="alerts"></h1>
+    </header>
+    <!--response one  -->
+    <div class="client-area">
+      <div class="all-players response">
+        <div class="players">
+          <div class="alerts"></div>
+          <form id="get-players" class="client-forms">
+            <fieldset>
+              <input type="submit" name="submit" value="show players">
+            </fieldset>
+          </form>
+        <form id="add-user-player" class="client-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="Add To My Players">
+            <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='id'>
+          </fieldset>
+        </form>
+        <div class="delete-resource-player">
+          <form id="delete-player" class="client-forms">
+            <fieldset>
+              <input type="submit" name="submit" value="delete player">
+              <input type="text" name='fantasy_player[id]' class="clear-input" placeholder='fantasy player id'>
+            </fieldset>
+          </form>
+      </div>
+    </div>
+      <div class="content"></div>
+      </div>
+  <!--response two  -->
+    <div class="target-players response">
+      <div class="user-alerts">
+      </div>
+      <div class="user-index">
+        <form id="user-players" class="client-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="get your players">
+          </fieldset>
+        </form>
+        <form id="update-user" class="client-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="Target Player">
+            <input type="text" name='fantasy_player[id]' class="clear-input" placeholder='fantasy id'>
+            <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='player id'>
+            <input type="text" name='fantasy_player[target]' class="clear-input" placeholder='target?'>
+          </fieldset>
+        </form>
         <div class="create-content"></div>
-          <div class="content"></div>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+   </div>
+   </br>
+   <div class="hide-content">
       </div>
     </body>
 </html>
