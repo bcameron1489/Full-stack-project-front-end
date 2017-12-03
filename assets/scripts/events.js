@@ -74,6 +74,15 @@ const onAddUserPlayer = function (event) {
     .catch(ui.addUserPlayerFailure)
 }
 
+const onUpdatePlayer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log(data)
+  api.updatePlayer(data)
+    .then(ui.addUserPlayerSuccess)
+    .catch(ui.addUserPlayerFailure)
+}
+
 const hideSignForms = function () {
   $('.login-forms').hide()
 }
@@ -114,6 +123,7 @@ module.exports = {
   onChangePassword,
   onCreatePlayer,
   onGetPlayers,
+  onUpdatePlayer,
   addHandlers,
   onUserPlayersIndex,
   onAddUserPlayer,

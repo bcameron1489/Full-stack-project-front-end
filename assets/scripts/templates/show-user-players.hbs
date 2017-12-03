@@ -1,13 +1,12 @@
 {{#each fantasy_players as |fantasy|}}
 
-  <ul data-id="{{fantasy.id}}"> <li>Id: {{fantasy.player.id}}</li> <li>Name: {{fantasy.player.name}}</li> <li>Team: {{fantasy.player.team}}</li>
-    <li>Bye: {{fantasy.player.bye}}</li><li>{{fantasy.target}}</li>
-  {{!-- <li>
-    {{#if player.description}}
-      {{player.description}}
-    {{else}}
-      No description.
-    {{/if}}
-  </li> --}}
+  <ul data-id="{{fantasy.id}}">
+    <li> Fantasy_Id: {{fantasy.id}} </li>
+    <li> Player_Id: {{fantasy.player_id}} </li>
+    <li> Name: {{fantasy.player.name}} </li>
+    <li> Team: {{fantasy.player.team}} </li>
+    <li> Bye: {{fantasy.player.bye}} </li>
+    <li> Target: {{fantasy.target}} </li>
+    <li><button class="Target Player?">sa</button></li>
 </ul>
 {{/each}}

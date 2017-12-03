@@ -77,9 +77,9 @@ const getPlayersFailure = function () {
 
 const userIndexSuccess = function (data) {
   console.log(data)
-  const showUserPlayers = showUserPlayersHtml({ fantasy_players: data.fantasy })
+  console.log('success')
+  const showUserPlayers = showUserPlayersHtml({ fantasy_players: data.fantasy_players })
   $('.create-content').append(showUserPlayers)
-  store.fantasy = data.fantasy
 }
 
 const userIndexFailure = function () {

@@ -83,6 +83,17 @@ const addUserPlayer = function (data) {
   })
 }
 
+const updatePlayer = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/fantasy_players',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 const deletePlayer = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/players/' + data.player.id,
