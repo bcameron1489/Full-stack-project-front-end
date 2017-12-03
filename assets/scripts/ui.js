@@ -47,6 +47,8 @@ const changePasswordFailure = () => {
 }
 
 const createPlayerSuccess = (data) => {
+  console.log('add player success')
+  console.log(data)
   store.player = data.player
 }
 
@@ -56,7 +58,6 @@ const createPlayerFailure = (data) => {
 
 const getPlayersSuccess = function (data) {
   console.log(data)
-  $('#get-players').hide()
   const showPlayers = showPlayersHtml({ players: data.players })
   $('.content').append(showPlayers)
   store.player = data.player
@@ -80,12 +81,23 @@ const userIndexFailure = function () {
   console.log('failuire')
 }
 
-const addUserPlayerSuccess = (data) => {
-  store.user.player = data.user.player
+const addUserPlayerSuccess = function (data) {
+  console.log('success')
+  store.fantasy = data.fantasy
 }
 
-const addUserPlayerFailure = (data) => {
+const addUserPlayerFailure = function (data) {
   console.log(data)
+}
+
+const deletePlayerSuccess = function (data) {
+  console.log(data)
+  console.log('delete success')
+}
+
+const deletePlayerFailure = function (data) {
+  console.log(data)
+  console.log('delete failure')
 }
 
 module.exports = {
@@ -104,5 +116,7 @@ module.exports = {
   userIndexSuccess,
   userIndexFailure,
   addUserPlayerSuccess,
-  addUserPlayerFailure
+  addUserPlayerFailure,
+  deletePlayerSuccess,
+  deletePlayerFailure
 }

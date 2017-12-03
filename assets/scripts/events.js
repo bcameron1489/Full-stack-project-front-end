@@ -39,8 +39,8 @@ const onCreatePlayer = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.createPlayer(data)
-    .then(ui.addPlayerSuccess)
-    .catch(ui.addPlayerFailure)
+    .then(ui.createPlayerSuccess)
+    .catch(ui.createPlayerFailure)
 }
 
 const onGetPlayers = function (event) {
@@ -48,6 +48,14 @@ const onGetPlayers = function (event) {
   api.getPlayers()
     .then(ui.getPlayersSuccess)
     .catch(ui.getPlayersFailure)
+}
+
+const onDeletePlayer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.deletePlayer(data)
+    .then(ui.deletePlayerSuccess)
+    .catch(ui.deletePlayerFailure)
 }
 
 const onUserPlayersIndex = function (event) {
@@ -60,6 +68,7 @@ const onUserPlayersIndex = function (event) {
 const onAddUserPlayer = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
+  console.log(data)
   api.addUserPlayer(data)
     .then(ui.addUserPlayerSuccess)
     .catch(ui.addUserPlayerFailure)
@@ -92,6 +101,8 @@ const addHandlers = () => {
   $('#add-player').on('submit', onCreatePlayer)
   $('#get-players').on('submit', onGetPlayers)
   $('#user-players').on('submit', onUserPlayersIndex)
+  $('#add-user-player').on('submit', onAddUserPlayer)
+  $('#delete-player').on('submit', onDeletePlayer)
 }
 
 module.exports = {
@@ -104,5 +115,6 @@ module.exports = {
   addHandlers,
   onLoginForms,
   onUserPlayersIndex,
-  onAddUserPlayer
+  onAddUserPlayer,
+  onDeletePlayer
 }

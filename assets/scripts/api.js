@@ -83,6 +83,16 @@ const addUserPlayer = function (data) {
   })
 }
 
+const deletePlayer = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/players/' + data.player.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -91,5 +101,6 @@ module.exports = {
   createPlayer,
   getPlayers,
   indexUserPlayers,
-  addUserPlayer
+  addUserPlayer,
+  deletePlayer
 }
