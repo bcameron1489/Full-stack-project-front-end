@@ -5,7 +5,7 @@ const showUserPlayersHtml = require('./templates/show-user-players.hbs')
 
 const onSignUpSuccess = function () {
   $('.alerts').text('Successfully Signed Up')
-  $('.input').val('')
+  $('.signup').val('')
 }
 
 const onSignUpFailure = function () {
@@ -30,6 +30,9 @@ const onSignInFailure = function (data) {
 
 const onSignOutSuccess = function (data) {
   $('.alerts').text('Successfully Signed Out')
+  $('.create-content').html('')
+  $('.content').html('')
+  $('.input').val('')
   $('.login-forms').show()
   $('#sign-out').hide()
   $('#change-password').hide()
@@ -54,6 +57,7 @@ const changePasswordFailure = function () {
 const getPlayersSuccess = function (data) {
   $('.alerts').text('Successfully Retrieved Players')
   const showPlayers = showPlayersHtml({ players: data.players })
+  $('.content').html('')
   $('.content').append(showPlayers)
   store.player = data.player
   $('.remove').on('click', function (event) {
@@ -66,8 +70,9 @@ const getPlayersFailure = function () {
 }
 
 const userIndexSuccess = function (data) {
-  $('.alerts').text('Successfully Retrieved Your Players')
+  $('.user-alerts').text('Successfully Retrieved Your Players')
   const showUserPlayers = showUserPlayersHtml({ fantasy_players: data.fantasy_players })
+  $('.create-content').html('')
   $('.create-content').append(showUserPlayers)
 }
 
@@ -93,11 +98,16 @@ const deletePlayerFailure = function (data) {
 }
 
 const updatePlayerSuccess = function (data) {
+  $('.input').val('')
+  $('.create-content').html('')
   $('.alerts').text('Successfully Updated Target')
+  const showUserPlayers = showUserPlayersHtml({ fantasy_players: data.fantasy_players })
+  $('.create-content').append(showUserPlayers)
   store.fantasy = data.fantasy
 }
 
 const updatePlayerFailure = function (data) {
+  $('.input').val('')
   $('.alerts').text('Failed To Update')
   store.fantasy = data.fantasy
 }

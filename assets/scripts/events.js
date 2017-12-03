@@ -70,7 +70,9 @@ const onUpdatePlayer = function (event) {
   const data = getFormFields(this)
   api.updatePlayer(data)
     .then(ui.updatePlayerSuccess)
-    .catch(ui.updatePlayerFailure)
+    .then(api.indexUserPlayers)
+    .then(ui.userIndexSuccess)
+    .catch(ui.userIndexFailure)
 }
 
 const hideSignForms = function () {
