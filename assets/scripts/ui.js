@@ -41,23 +41,23 @@ const onSignOutFailure = function (data) {
   console.log('failure')
 }
 
-const changePasswordSuccess = () => {
+const changePasswordSuccess = function () {
   console.log('success')
   $('.input').val('')
 }
 
-const changePasswordFailure = () => {
+const changePasswordFailure = function () {
   console.log('failure')
   $('.input').val('')
 }
 
-const createPlayerSuccess = (data) => {
+const createPlayerSuccess = function (data) {
   console.log('add player success')
   console.log(data)
   store.player = data.player
 }
 
-const createPlayerFailure = (data) => {
+const createPlayerFailure = function (data) {
   console.log(data)
 }
 
@@ -66,7 +66,7 @@ const getPlayersSuccess = function (data) {
   const showPlayers = showPlayersHtml({ players: data.players })
   $('.content').append(showPlayers)
   store.player = data.player
-  $('.remove').on('click', (event) => {
+  $('.remove').on('click', function (event) {
     $(event.target).parent().parent().hide()
   })
 }
@@ -105,6 +105,18 @@ const deletePlayerFailure = function (data) {
   console.log('delete failure')
 }
 
+const updatePlayerSuccess = function (data) {
+  console.log('add player success')
+  console.log(data)
+  store.fantasy = data.fantasy
+}
+
+const updatePlayerFailure = function (data) {
+  console.log('failure')
+  console.log(data)
+  store.fantasy = data.fantasy
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -123,5 +135,7 @@ module.exports = {
   addUserPlayerSuccess,
   addUserPlayerFailure,
   deletePlayerSuccess,
-  deletePlayerFailure
+  deletePlayerFailure,
+  updatePlayerFailure,
+  updatePlayerSuccess
 }

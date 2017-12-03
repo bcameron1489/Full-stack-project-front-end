@@ -85,8 +85,8 @@ const addUserPlayer = function (data) {
 
 const updatePlayer = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/fantasy_players',
-    method: 'POST',
+    url: config.apiOrigin + '/fantasy_players/' + data.fantasy_player.id,
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -113,5 +113,6 @@ module.exports = {
   getPlayers,
   indexUserPlayers,
   addUserPlayer,
-  deletePlayer
+  deletePlayer,
+  updatePlayer
 }

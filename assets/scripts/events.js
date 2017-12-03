@@ -79,8 +79,8 @@ const onUpdatePlayer = function (event) {
   const data = getFormFields(this)
   console.log(data)
   api.updatePlayer(data)
-    .then(ui.addUserPlayerSuccess)
-    .catch(ui.addUserPlayerFailure)
+    .then(ui.updatePlayerSuccess)
+    .catch(ui.updatePlayerFailure)
 }
 
 const hideSignForms = function () {
@@ -111,6 +111,7 @@ const addHandlers = () => {
   $('#user-players').on('submit', onUserPlayersIndex)
   $('#add-user-player').on('submit', onAddUserPlayer)
   $('#delete-player').on('submit', onDeletePlayer)
+  $('#update-user').on('submit', onUpdatePlayer)
   $('.show-login').on('click', function () {
     $('.login-forms').show()
   })

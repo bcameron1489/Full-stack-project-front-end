@@ -1,12 +1,11 @@
 {{#each fantasy_players as |fantasy|}}
 
-  <ul data-id="{{fantasy.id}}">
-    <li> Fantasy_Id: {{fantasy.id}} </li>
-    <li> Player_Id: {{fantasy.player_id}} </li>
-    <li> Name: {{fantasy.player.name}} </li>
-    <li> Team: {{fantasy.player.team}} </li>
-    <li> Bye: {{fantasy.player.bye}} </li>
-    <li> Target: {{fantasy.target}} </li>
-    <li><button class="Target Player?">sa</button></li>
+  <ul class="client-forms" data-id="{{fantasy.id}}">
+    <div> Fantasy_Id: {{fantasy.id}} </div>
+    <div> Player_Id: {{fantasy.player_id}} </div>
+    <div> Name: {{fantasy.player.name}} </div>
+    <div> Team: {{fantasy.player.team}} </div>
+    <div> Bye: {{fantasy.player.bye}} </div>
+    <div> Target: {{fantasy.target}} </div>
 </ul>
 {{/each}}
