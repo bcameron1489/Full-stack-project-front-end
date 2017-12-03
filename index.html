@@ -12,7 +12,6 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <div class="hide-sign-forms">
         <button class="show-login" type="button">Log In!</button>
         <form id="sign-up" class="login-forms">
           <fieldset>
@@ -22,8 +21,6 @@
             <input name="credentials[password_confirmation]" type="password" class="input" placeholder="PASSWORD_CONFIRMATION">
           </fieldset>
         </form>
-      </div>
-      <div class="hide-sign-forms">
         <form id="sign-in" class="login-forms">
           <fieldset>
             <input type="submit" name="submit" value="Sign in!">
@@ -31,20 +28,19 @@
             <input name="credentials[password]" type="password" class="input" placeholder="PASSWORD">
           </fieldset>
         </form>
-      </div>
-        <form id="sign-out">
+        <form id="sign-out" class="auth-content">
           <fieldset>
             <input type="submit" name="submit" value="Sign out!">
           </fieldset>
         </form>
-      <form id="change-password">
+      <form id="change-password" class="auth-content">
         <fieldset>
           <input type="submit" name="submit" value="Change Password!">
           <input type="text" name="passwords[old]" class="input" placeholder="Old Password">
           <input type="password" name="passwords[new]" class="input" placeholder="New Password">
         </fieldset>
       </form>
-      <form id="add-player">
+      <form id="add-player" class="client-forms">
       <fieldset>
         <input type="submit" name="submit" value="Create New Player">
         <input type="text" name='player[name]' class="clear-input" placeholder='player name'>
@@ -53,21 +49,20 @@
       </fieldset>
     </form>
     <div class="players">
-      <form id="get-players">
+      <form id="get-players" class="client-forms">
         <fieldset>
           <input type="submit" name="submit" value="show players">
         </fieldset>
       </form>
     </div></br>
-    <form id="add-user-player">
+    <form id="add-user-player" class="client-forms">
     <fieldset>
       <input type="submit" name="submit" value="Add To My Players">
-      <input type="text" name='player[id]' class="clear-input" placeholder='player name'>
-      <input type="text" name='fantasy_player[target]' class="clear-input" placeholder='player team'>
+      <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='id'>
     </fieldset>
   </form>
   <div class="delete-resource-player">
-    <form id="delete-player">
+    <form id="delete-player" class="client-forms">
       <fieldset>
         <input type="submit" name="submit" value="delete player">
         <input type="text" name='player[id]' class="clear-input" placeholder='player id'>
@@ -75,7 +70,7 @@
     </form>
   </div>
     <div class="user-index">
-      <form id="user-players">
+      <form id="user-players" class="client-forms">
         <fieldset>
           <input type="submit" name="submit" value="get your players">
         </fieldset>

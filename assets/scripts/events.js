@@ -74,24 +74,23 @@ const onAddUserPlayer = function (event) {
     .catch(ui.addUserPlayerFailure)
 }
 
-// const hideContent = function () {
-//   $('.hide-content').hide()
-// }
-//
-// hideContent()
-
-const hideForms = function () {
-  $('#sign-out').hide()
-  $('#change-password').hide()
+const hideSignForms = function () {
+  $('.login-forms').hide()
 }
 
-hideForms()
+hideSignForms()
 
-const onLoginForms = function () {
-  $('.show-login').on('click', function () {
-    $('.hide-sign-forms').show()
-  })
+const hideAuthForms = function () {
+  $('.auth-content').hide()
 }
+
+hideAuthForms()
+
+const hideClientForms = function () {
+  $('.client-forms').hide()
+}
+
+hideClientForms()
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -103,6 +102,9 @@ const addHandlers = () => {
   $('#user-players').on('submit', onUserPlayersIndex)
   $('#add-user-player').on('submit', onAddUserPlayer)
   $('#delete-player').on('submit', onDeletePlayer)
+  $('.show-login').on('click', function () {
+    $('.login-forms').show()
+  })
 }
 
 module.exports = {
@@ -113,7 +115,6 @@ module.exports = {
   onCreatePlayer,
   onGetPlayers,
   addHandlers,
-  onLoginForms,
   onUserPlayersIndex,
   onAddUserPlayer,
   onDeletePlayer

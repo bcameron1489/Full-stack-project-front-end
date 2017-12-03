@@ -16,9 +16,10 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (data) {
   console.log('Sign In Success!')
   $('.input').val('')
-  $('.hide-sign-forms').hide()
-  $('#change-password').show()
-  $('#sign-out').show()
+  $('.login-forms').hide()
+  $('.show-login').hide()
+  $('.auth-content').show()
+  $('.client-forms').show()
   store.user = data.user
 }
 
@@ -29,9 +30,11 @@ const onSignInFailure = function (data) {
 
 const onSignOutSuccess = function (data) {
   console.log('success')
-  $('.hide-sign-forms').show()
+  $('.login-forms').show()
   $('#sign-out').hide()
   $('#change-password').hide()
+  $('.show-login').show()
+  $('.client-forms').hide()
 }
 
 const onSignOutFailure = function (data) {
@@ -40,10 +43,12 @@ const onSignOutFailure = function (data) {
 
 const changePasswordSuccess = () => {
   console.log('success')
+  $('.input').val('')
 }
 
 const changePasswordFailure = () => {
   console.log('failure')
+  $('.input').val('')
 }
 
 const createPlayerSuccess = (data) => {
