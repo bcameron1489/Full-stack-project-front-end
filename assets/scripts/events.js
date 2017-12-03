@@ -35,14 +35,6 @@ const onChangePassword = function (event) {
 }
 //  User actions
 
-const onCreatePlayer = function (event) {
-  event.preventDefault()
-  const data = getFormFields(this)
-  api.createPlayer(data)
-    .then(ui.createPlayerSuccess)
-    .catch(ui.createPlayerFailure)
-}
-
 const onGetPlayers = function (event) {
   event.preventDefault()
   api.getPlayers()
@@ -68,7 +60,6 @@ const onUserPlayersIndex = function (event) {
 const onAddUserPlayer = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log(data)
   api.addUserPlayer(data)
     .then(ui.addUserPlayerSuccess)
     .catch(ui.addUserPlayerFailure)
@@ -77,7 +68,6 @@ const onAddUserPlayer = function (event) {
 const onUpdatePlayer = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log(data)
   api.updatePlayer(data)
     .then(ui.updatePlayerSuccess)
     .catch(ui.updatePlayerFailure)
@@ -106,7 +96,6 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
-  $('#add-player').on('submit', onCreatePlayer)
   $('#get-players').on('submit', onGetPlayers)
   $('#user-players').on('submit', onUserPlayersIndex)
   $('#add-user-player').on('submit', onAddUserPlayer)
@@ -122,7 +111,6 @@ module.exports = {
   onSignIn,
   onSignOut,
   onChangePassword,
-  onCreatePlayer,
   onGetPlayers,
   onUpdatePlayer,
   addHandlers,

@@ -41,17 +41,6 @@ const changePassword = function (data) {
   })
 }
 
-const createPlayer = function (data) {
-  return $.ajax({
-    url: config.apiOrigin + '/players',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
-
 const getPlayers = function () {
   return $.ajax({
     url: config.apiOrigin + '/players',
@@ -109,7 +98,6 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  createPlayer,
   getPlayers,
   indexUserPlayers,
   addUserPlayer,

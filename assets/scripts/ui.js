@@ -4,17 +4,17 @@ const showPlayersHtml = require('./templates/show-players-html.hbs')
 const showUserPlayersHtml = require('./templates/show-user-players.hbs')
 
 const onSignUpSuccess = function () {
-  console.log('Success!')
+  $('.alerts').text('Successfully Signed Up')
   $('.input').val('')
 }
 
 const onSignUpFailure = function () {
-  console.log('Failure')
+  $('.alerts').text('Failed To Signed Up')
   $('.input').val('')
 }
 
 const onSignInSuccess = function (data) {
-  console.log('Sign In Success!')
+  $('.alerts').text('Successfully Signed In')
   $('.input').val('')
   $('.login-forms').hide()
   $('.show-login').hide()
@@ -24,12 +24,12 @@ const onSignInSuccess = function (data) {
 }
 
 const onSignInFailure = function (data) {
-  console.log(data)
+  $('.alerts').text('Failed To Sign In')
   $('.input').val('')
 }
 
 const onSignOutSuccess = function (data) {
-  console.log('success')
+  $('.alerts').text('Successfully Signed Out')
   $('.login-forms').show()
   $('#sign-out').hide()
   $('#change-password').hide()
@@ -38,31 +38,21 @@ const onSignOutSuccess = function (data) {
 }
 
 const onSignOutFailure = function (data) {
-  console.log('failure')
+  $('.alerts').text('Failed To Sign Out')
 }
 
 const changePasswordSuccess = function () {
-  console.log('success')
+  $('.alerts').text('Successfully Changed Password')
   $('.input').val('')
 }
 
 const changePasswordFailure = function () {
-  console.log('failure')
+  $('.alerts').text('Failed To Change Password')
   $('.input').val('')
 }
 
-const createPlayerSuccess = function (data) {
-  console.log('add player success')
-  console.log(data)
-  store.player = data.player
-}
-
-const createPlayerFailure = function (data) {
-  console.log(data)
-}
-
 const getPlayersSuccess = function (data) {
-  console.log(data)
+  $('.alerts').text('Successfully Retrieved Players')
   const showPlayers = showPlayersHtml({ players: data.players })
   $('.content').append(showPlayers)
   store.player = data.player
@@ -72,48 +62,43 @@ const getPlayersSuccess = function (data) {
 }
 
 const getPlayersFailure = function () {
-  console.log('failuire')
+  $('.alerts').text('Failed To Get Index')
 }
 
 const userIndexSuccess = function (data) {
-  console.log(data)
-  console.log('success')
+  $('.alerts').text('Successfully Retrieved Your Players')
   const showUserPlayers = showUserPlayersHtml({ fantasy_players: data.fantasy_players })
   $('.create-content').append(showUserPlayers)
 }
 
 const userIndexFailure = function () {
-  console.log('failuire')
+  $('.alerts').text('Failed To Get Your Players')
 }
 
 const addUserPlayerSuccess = function (data) {
-  console.log('success')
+  $('.alerts').text('Successfully Added Player')
   store.fantasy = data.fantasy
 }
 
 const addUserPlayerFailure = function (data) {
-  console.log(data)
+  $('.alerts').text('Failed To Add Player')
 }
 
 const deletePlayerSuccess = function (data) {
-  console.log(data)
-  console.log('delete success')
+  $('.alerts').text('Successfully Removed Player')
 }
 
 const deletePlayerFailure = function (data) {
-  console.log(data)
-  console.log('delete failure')
+  $('.alerts').text('Failed To Remove Player')
 }
 
 const updatePlayerSuccess = function (data) {
-  console.log('add player success')
-  console.log(data)
+  $('.alerts').text('Successfully Updated Target')
   store.fantasy = data.fantasy
 }
 
 const updatePlayerFailure = function (data) {
-  console.log('failure')
-  console.log(data)
+  $('.alerts').text('Failed To Update')
   store.fantasy = data.fantasy
 }
 
@@ -126,8 +111,6 @@ module.exports = {
   onSignOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  createPlayerSuccess,
-  createPlayerFailure,
   getPlayersSuccess,
   getPlayersFailure,
   userIndexSuccess,
