@@ -11,7 +11,7 @@ const onSignUpSuccess = function () {
 
 const onSignUpFailure = function () {
   $('.alerts').text('Failed To Signed Up')
-  $('.input').val('')
+  $('.signup').val('')
 }
 
 const onSignInSuccess = function (data) {
