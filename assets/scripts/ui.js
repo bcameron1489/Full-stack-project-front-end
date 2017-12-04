@@ -121,7 +121,7 @@ const deletePlayerSuccess = function (data) {
 }
 
 const deletePlayerFailure = function (data) {
-  $('.alerts').text('Failed To Remove Player')
+  $('.update-alert').text('Failed To Remove Player')
 }
 
 const updatePlayerSuccess = function (data) {
