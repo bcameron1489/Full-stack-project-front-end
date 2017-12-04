@@ -2,6 +2,7 @@
 const store = require('./store')
 const showPlayersHtml = require('./templates/show-players-html.hbs')
 const showUserPlayersHtml = require('./templates/show-user-players.hbs')
+const getSingleResource = require('./templates/get-single-resource.hbs')
 
 const onSignUpSuccess = function () {
   $('.alerts').text('Successfully Signed Up')
@@ -30,9 +31,12 @@ const onSignInFailure = function (data) {
 
 const onSignOutSuccess = function (data) {
   $('.alerts').text('Successfully Signed Out')
+  $('.update-alert').html('')
+  $('.user-alerts').html('')
   $('.create-content').html('')
   $('.content').html('')
   $('.input').val('')
+  $('.clear-input').val('')
   $('.login-forms').show()
   $('#sign-out').hide()
   $('#change-password').hide()
@@ -56,6 +60,7 @@ const changePasswordFailure = function () {
 
 const getPlayersSuccess = function (data) {
   $('.alerts').text('Successfully Retrieved Players')
+  $('.clear-input').html('')
   const showPlayers = showPlayersHtml({ players: data.players })
   $('.content').html('')
   $('.content').append(showPlayers)
@@ -63,6 +68,21 @@ const getPlayersSuccess = function (data) {
   $('.remove').on('click', function (event) {
     $(event.target).parent().parent().hide()
   })
+}
+
+const getSinglePlayerSuccess = function (data) {
+  $('.alerts').text('Successfully Retrieved Single Resource')
+  $('.clear-input').val('')
+  const singleResource = getSingleResource({ players: data })
+  $('.content').html('')
+  $('.content').append(singleResource)
+  $('.remove').on('click', function (event) {
+    $(event.target).parent().parent().hide()
+  })
+}
+
+const getSinglePlayerFailure = function (data) {
+  $('.alerts').text('Successfully Retrieved Single Resource')
 }
 
 const getPlayersFailure = function () {
@@ -82,6 +102,7 @@ const userIndexFailure = function () {
 
 const addUserPlayerSuccess = function (data) {
   $('.alerts').text('Successfully Added Player')
+  $('.clear-input').val('')
   store.fantasy = data.fantasy
 }
 
@@ -90,7 +111,8 @@ const addUserPlayerFailure = function (data) {
 }
 
 const deletePlayerSuccess = function (data) {
-  $('.alerts').text('Successfully Removed Player')
+  $('.update-alert').text('Successfully Removed Player')
+  $('.clear-input').val('')
 }
 
 const deletePlayerFailure = function (data) {
@@ -98,9 +120,9 @@ const deletePlayerFailure = function (data) {
 }
 
 const updatePlayerSuccess = function (data) {
-  $('.input').val('')
+  $('.clear-input').val('')
   $('.create-content').html('')
-  $('.alerts').text('Successfully Updated Target')
+  $('.update-alert').text('Successfully Updated Target')
   const showUserPlayers = showUserPlayersHtml({ fantasy_players: data.fantasy_players })
   $('.create-content').append(showUserPlayers)
   store.fantasy = data.fantasy
@@ -123,6 +145,8 @@ module.exports = {
   changePasswordFailure,
   getPlayersSuccess,
   getPlayersFailure,
+  getSinglePlayerSuccess,
+  getSinglePlayerFailure,
   userIndexSuccess,
   userIndexFailure,
   addUserPlayerSuccess,

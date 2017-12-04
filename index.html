@@ -13,7 +13,6 @@
     </head>
     <body class="container-fluid">
       <header>
-        <button class="show-login" type="button">Log In!</button>
         <form id="sign-up" class="login-forms">
           <fieldset>
             <input type="submit" name="submit" value="Sign up!">
@@ -52,25 +51,26 @@
               <input type="submit" name="submit" value="show players">
             </fieldset>
           </form>
+          <form id="get-single-player" class="client-forms">
+            <fieldset>
+              <input type="submit" name="submit" value="search single player">
+              <input type="text" name='player[id]' class="clear-input" placeholder='player id'>
+            </fieldset>
+          </form>
         <form id="add-user-player" class="client-forms">
           <fieldset>
             <input type="submit" name="submit" value="Add To My Players">
             <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='id'>
           </fieldset>
         </form>
-        <div class="delete-resource-player">
-          <form id="delete-player" class="client-forms">
-            <fieldset>
-              <input type="submit" name="submit" value="delete player">
-              <input type="text" name='fantasy_player[id]' class="clear-input" placeholder='fantasy player id'>
-            </fieldset>
-          </form>
-      </div>
     </div>
       <div class="content"></div>
       </div>
   <!--response two  -->
     <div class="target-players response">
+      <div class="update-alert">
+      </div>
+    </br>
       <div class="user-alerts">
       </div>
       <div class="user-index">
@@ -87,11 +87,17 @@
             <input type="text" name='fantasy_player[target]' class="clear-input" placeholder='target?'>
           </fieldset>
         </form>
+        <form id="delete-player" class="client-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="delete player">
+            <input type="text" name='fantasy_player[id]' class="clear-input" placeholder='fantasy player id'>
+          </fieldset>
+        </form>
+    </div>
         <div class="create-content"></div>
       </div>
     </div>
     <div style="clear:both"></div>
-   </div>
    </br>
    <div class="hide-content">
       </div>

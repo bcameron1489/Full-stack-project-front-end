@@ -51,6 +51,16 @@ const getPlayers = function () {
   })
 }
 
+const getSinglePlayer = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/players/' + data.player.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const indexUserPlayers = function () {
   return $.ajax({
     url: config.apiOrigin + '/fantasy_players',
@@ -99,6 +109,7 @@ module.exports = {
   signOut,
   changePassword,
   getPlayers,
+  getSinglePlayer,
   indexUserPlayers,
   addUserPlayer,
   deletePlayer,

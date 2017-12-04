@@ -42,11 +42,21 @@ const onGetPlayers = function (event) {
     .catch(ui.getPlayersFailure)
 }
 
+const onGetSinglePlayer = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.getSinglePlayer(data)
+    .then(ui.getSinglePlayerSuccess)
+    .catch(ui.getSinglePlayerFailure)
+}
+
 const onDeletePlayer = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.deletePlayer(data)
     .then(ui.deletePlayerSuccess)
+    .then(api.indexUserPlayers)
+    .then(ui.userIndexSuccess)
     .catch(ui.deletePlayerFailure)
 }
 
@@ -62,6 +72,8 @@ const onAddUserPlayer = function (event) {
   const data = getFormFields(this)
   api.addUserPlayer(data)
     .then(ui.addUserPlayerSuccess)
+    .then(api.indexUserPlayers)
+    .then(ui.userIndexSuccess)
     .catch(ui.addUserPlayerFailure)
 }
 
@@ -74,12 +86,6 @@ const onUpdatePlayer = function (event) {
     .then(ui.userIndexSuccess)
     .catch(ui.userIndexFailure)
 }
-
-const hideSignForms = function () {
-  $('.login-forms').hide()
-}
-
-hideSignForms()
 
 const hideAuthForms = function () {
   $('.auth-content').hide()
@@ -99,6 +105,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#get-players').on('submit', onGetPlayers)
+  $('#get-single-player').on('submit', onGetSinglePlayer)
   $('#user-players').on('submit', onUserPlayersIndex)
   $('#add-user-player').on('submit', onAddUserPlayer)
   $('#delete-player').on('submit', onDeletePlayer)
@@ -114,6 +121,7 @@ module.exports = {
   onSignOut,
   onChangePassword,
   onGetPlayers,
+  onGetSinglePlayer,
   onUpdatePlayer,
   addHandlers,
   onUserPlayersIndex,
