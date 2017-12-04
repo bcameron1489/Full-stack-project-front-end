@@ -71,18 +71,23 @@ const getPlayersSuccess = function (data) {
 }
 
 const getSinglePlayerSuccess = function (data) {
-  $('.alerts').text('Successfully Retrieved Single Resource')
-  $('.clear-input').val('')
-  const singleResource = getSingleResource({ players: data })
-  $('.content').html('')
-  $('.content').append(singleResource)
-  $('.remove').on('click', function (event) {
-    $(event.target).parent().parent().hide()
-  })
+  if ($('.clear-input-single').val() !== '') {
+    $('.alerts').text('Successfully Retrieved Single Resource')
+    const singleResource = getSingleResource({ players: data })
+    $('.clear-input-single').val('')
+    $('.content').html('')
+    $('.content').append(singleResource)
+    $('.remove').on('click', function (event) {
+      $(event.target).parent().parent().hide()
+    })
+  } else {
+    return getSinglePlayerFailure()
+  }
 }
 
 const getSinglePlayerFailure = function (data) {
-  $('.alerts').text('Successfully Retrieved Single Resource')
+  $('.clear-input-single').val('')
+  $('.alerts').text('Failed to get single reosource')
 }
 
 const getPlayersFailure = function () {
