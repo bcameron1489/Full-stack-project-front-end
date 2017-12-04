@@ -84,7 +84,7 @@ const onUpdatePlayer = function (event) {
     .then(ui.updatePlayerSuccess)
     .then(api.indexUserPlayers)
     .then(ui.userIndexSuccess)
-    .catch(ui.userIndexFailure)
+    .catch(ui.updatePlayerFailure)
 }
 
 const hideAuthForms = function () {

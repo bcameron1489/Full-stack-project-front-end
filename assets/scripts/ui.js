@@ -130,7 +130,7 @@ const updatePlayerSuccess = function (data) {
 
 const updatePlayerFailure = function (data) {
   $('.input').val('')
-  $('.alerts').text('Failed To Update')
+  $('.update-alert').text('Failed To Update')
   store.fantasy = data.fantasy
 }
 
