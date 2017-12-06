@@ -1,6 +1,7 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$header-color: #848484;
 
 
 .create-content {
@@ -9,9 +10,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   right: 0;
 }
 
+
+.header-color {
+  background-color: $header-color;
+  padding: 50px;
+  width: 100%;
+}
+
 .response {
   float: left;
   margin-top: 60px;
+  padding-bottom: 100px;
+  padding-top: 100px;
   width: 49%;
 }
 

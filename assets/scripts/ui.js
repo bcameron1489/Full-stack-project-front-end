@@ -109,6 +109,7 @@ const addUserPlayerSuccess = function (data) {
   $('.alerts').text('Successfully Added Player')
   $('.clear-input').val('')
   store.fantasy = data.fantasy
+  store.data = data.user
 }
 
 const addUserPlayerFailure = function (data) {
@@ -118,6 +119,7 @@ const addUserPlayerFailure = function (data) {
 const deletePlayerSuccess = function (data) {
   $('.update-alert').text('Successfully Removed Player')
   $('.clear-input').val('')
+  store.data = data.user
 }
 
 const deletePlayerFailure = function (data) {
@@ -131,6 +133,7 @@ const updatePlayerSuccess = function (data) {
   const showUserPlayers = showUserPlayersHtml({ fantasy_players: data.fantasy_players })
   $('.create-content').append(showUserPlayers)
   store.fantasy = data.fantasy
+  store.data = data.user
 }
 
 const updatePlayerFailure = function (data) {
