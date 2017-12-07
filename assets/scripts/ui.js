@@ -73,7 +73,7 @@ const getPlayersSuccess = function (data) {
 const getSinglePlayerSuccess = function (data) {
   if ($('.clear-input-single').val() !== '') {
     $('.alerts').text('Successfully Retrieved Single Resource')
-    const singleResource = getSingleResource({ players: data })
+    const singleResource = getSingleResource({ player: data })
     $('.clear-input-single').val('')
     $('.content').html('')
     $('.content').append(singleResource)

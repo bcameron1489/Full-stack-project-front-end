@@ -1,4 +1,4 @@
-{{#each players as |player|}}
+{{!-- {{#each players as |player|}} --}}
 
 <ul data-id="{{player.id}}">
   <div>Id: {{player.id}}</div>
@@ -6,5 +6,8 @@
   <div>Team: {{player.team}}</div>
   <div>Bye: {{player.bye}}</div>
   <div><button class="remove">remove</button></div>
+  <div><button data-id="{{player.id}}"type="button" name="button">Delete</button>
+
+  </div>
   </ul>
-  {{/each}}
+  {{!-- {{/each}} --}}

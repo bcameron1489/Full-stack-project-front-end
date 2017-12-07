@@ -18,6 +18,7 @@ const onSignIn = function (event) {
     .catch(ui.onSignInFailure)
 }
 
+// $(event.target).attr('data-id')
 const onSignOut = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
