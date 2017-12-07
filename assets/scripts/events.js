@@ -109,7 +109,7 @@ const addHandlers = () => {
   $('#get-single-player').on('submit', onGetSinglePlayer)
   $('#user-players').on('submit', onUserPlayersIndex)
   $('#add-user-player').on('submit', onAddUserPlayer)
-  $('#delete-player').on('submit', onDeletePlayer)
+  $('.delete-resource-player').on('submit', onDeletePlayer)
   $('#update-user').on('submit', onUpdatePlayer)
   $('.show-login').on('click', function () {
     $('.login-forms').show()

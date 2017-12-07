@@ -95,7 +95,7 @@ const updatePlayer = function (data) {
 
 const deletePlayer = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/fantasy_players/' + data.fantasy_player.id,
+    url: config.apiOrigin + '/fantasy_players/' + data.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
