@@ -117,9 +117,9 @@ const addUserPlayerFailure = function (data) {
 }
 
 const deletePlayerSuccess = function (data) {
+  console.log(data)
   $('.update-alert').text('Successfully Removed Player')
   $('.clear-input').val('')
-  store.data = data.user
 }
 
 const deletePlayerFailure = function (data) {

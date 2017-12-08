@@ -100,6 +100,7 @@ const hideClientForms = function () {
 
 hideClientForms()
 
+// $(event.target).attr(data-id)
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -109,7 +110,7 @@ const addHandlers = () => {
   $('#get-single-player').on('submit', onGetSinglePlayer)
   $('#user-players').on('submit', onUserPlayersIndex)
   $('#add-user-player').on('submit', onAddUserPlayer)
-  $('.delete-resource-player').on('submit', onDeletePlayer)
+  $('.create-content').on('submit', '.delete-form', onDeletePlayer)
   $('#update-user').on('submit', onUpdatePlayer)
   $('.show-login').on('click', function () {
     $('.login-forms').show()

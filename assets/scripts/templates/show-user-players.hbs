@@ -8,7 +8,10 @@
     <div> Bye: {{fantasy.player.bye}} </div>
     <div> Target: {{fantasy.target}} </div>
     <div class="delete-resource-player">
-      <button type ="button" name="button" data-id="{{fantasy.id}}" class="delete">Delete</button>
+    <form class="delete-form">
+      <input class="delete-button" type ="submit" name="submit" data-id="{{fantasy.id}}" value="Delete"></input>
+      <input class="id-value" name="id" value="{{fantasy.id}}" type="hidden"></input>
+    </form>
     </div>
 </ul>
 {{/each}}
