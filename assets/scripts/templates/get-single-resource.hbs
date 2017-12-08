@@ -5,7 +5,11 @@
   <div>Name: {{player.name}}</div>
   <div>Team: {{player.team}}</div>
   <div>Bye: {{player.bye}}</div>
+  <form class="Add-form">
+    <input class="add-button" type ="submit" name="fantasy_player[player_id]" data-id="{{player.id}}" value="Add To My Players"></input>
+    <input class="id-value" name="fantasy_player[player_id]" value="{{player.id}}" type="hidden"></input>
+  </form>
+  {{!-- <button class="add-button">Add Player</button> --}}
   <div><button class="remove">hide player</button></div>
-  </div>
   </ul>
   {{/each}}

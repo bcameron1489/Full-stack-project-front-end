@@ -1,6 +1,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+// const store = require('./store')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -71,6 +72,9 @@ const onUserPlayersIndex = function (event) {
 const onAddUserPlayer = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
+  // const data = {
+  //   player_id: store.singlePlayerId.id
+  // }
   api.addUserPlayer(data)
     .then(ui.addUserPlayerSuccess)
     .then(api.indexUserPlayers)
@@ -109,7 +113,7 @@ const addHandlers = () => {
   $('#get-players').on('submit', onGetPlayers)
   $('#get-single-player').on('submit', onGetSinglePlayer)
   $('#user-players').on('submit', onUserPlayersIndex)
-  $('#add-user-player').on('submit', onAddUserPlayer)
+  $('.content').on('submit', '.add-form', onAddUserPlayer)
   $('.create-content').on('submit', '.delete-form', onDeletePlayer)
   $('#update-user').on('submit', onUpdatePlayer)
   $('.show-login').on('click', function () {
