@@ -53,7 +53,7 @@ const getPlayers = function () {
 
 const getSinglePlayer = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/players/' + data.player.id,
+    url: config.apiOrigin + '/players/' + data.players.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
