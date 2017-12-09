@@ -64,7 +64,7 @@ const getPlayersSuccess = function (data) {
   const showPlayers = showPlayersHtml({ players: data.players })
   $('.content').html('')
   $('.content').append(showPlayers)
-  store.player = data.player
+  store.data = data.players
   $('.remove').on('click', function (event) {
     $(event.target).parent().parent().hide()
   })

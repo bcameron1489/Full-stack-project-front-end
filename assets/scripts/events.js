@@ -39,7 +39,8 @@ const onChangePassword = function (event) {
 
 const onGetPlayers = function (event) {
   event.preventDefault()
-  api.getPlayers()
+  const data = getFormFields(this)
+  api.getPlayers(data)
     .then(ui.getPlayersSuccess)
     .catch(ui.getPlayersFailure)
 }
@@ -72,9 +73,6 @@ const onUserPlayersIndex = function (event) {
 const onAddUserPlayer = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  // const data = {
-  //   player_id: store.singlePlayerId.id
-  // }
   api.addUserPlayer(data)
     .then(ui.addUserPlayerSuccess)
     .then(api.indexUserPlayers)
