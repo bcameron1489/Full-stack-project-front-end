@@ -89,7 +89,7 @@ const onUpdatePlayer = function (event) {
     .then(ui.userIndexSuccess)
     .catch(ui.updatePlayerFailure)
 }
-
+// hides instructions on page load
 const hideInstructions = function () {
   $('.instructions-page').hide()
 }
