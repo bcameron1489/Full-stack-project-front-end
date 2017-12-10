@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Fantasy Tracker App</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <header>
+        <div class="header-color">
+        <form id="sign-up" class="login-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="Sign up!">
+            <input name="credentials[email]" type="text" class="signup" placeholder="EMAIL">
+            <input name="credentials[password]" type="password" class="signup" placeholder="PASSWORD">
+            <input name="credentials[password_confirmation]" type="password" class="signup" placeholder="PASSWORD_CONFIRMATION">
+          </fieldset>
+        </form>
+        <form id="sign-in" class="login-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="Sign in! ">
+            <input name="credentials[email]" type="text" class="input" placeholder="EMAIL">
+            <input name="credentials[password]" type="password" class="input" placeholder="PASSWORD">
+          </fieldset>
+        </form>
+        <form id="sign-out" class="auth-content">
+          <fieldset>
+            <input type="submit" name="submit" value="Sign out!">
+          </fieldset>
+        </form>
+      <form id="change-password" class="auth-content">
+        <fieldset>
+          <input type="submit" name="submit" value="Change Password!">
+          <input type="text" name="passwords[old]" class="input" placeholder="Old Password">
+          <input type="password" name="passwords[new]" class="input" placeholder="New Password">
+        </fieldset>
+      </form>
+      <div class="intructions">
+          <button class="instructions-button" name="instructions" type="button">See Instructions</button>
+      </div>
+      <div class="instructions-page">
+        <div class="return-page">
+          <button class="return-button" name="return" type="button">Return</button>
+        </div>
+        <h1 class="instructions-header">
+          Instructions
+        </h1>
+          <ol>
+            <li>Check the pulic resource "show players" to view a list of players</li>
+            <li>Additionally you can search a single player by id</li>
+            <li>Next add a desired player to your list with the add player button</li>
+            <li>Under your saved players(on the right) you can target a specific player(comment when to draft)</li>
+            <li>Finally at any time you can remove a player from your list with the delete button at any time</li>
+          </ol>
+      </div>
+    </div>
+    </header>
+    <!--response one  -->
+    <div class="client-area">
+      <div class="all-players response">
+        <div class="players">
+          <div class="alerts"></div>
+          <form id="get-players" class="client-forms">
+            <fieldset>
+              <input type="submit" name="submit" value="show players">
+            </fieldset>
+          </form>
+          <form id="get-single-player" class="client-forms">
+            <fieldset>
+              <input type="submit" name="submit" value="search single player">
+              <input type="text" name='player[id]' class="clear-input-single" placeholder='player id'>
+            </fieldset>
+          </form>
+          <!-- add to handlebars -->
+        <!-- <form id="add-user-player" class="client-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="Add To My Players">
+            <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='id'>
+          </fieldset>
+        </form> -->
+      </div>
+      <!--response two  -->
+      <div class="content"></div>
+      </div>
+    <div class="target-players response">
+      <div class="update-alert">
+      </div>
+    </br>
+      <div class="user-alerts">
+      </div>
+      <div class="user-index">
+        <form id="user-players" class="client-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="get your players">
+          </fieldset>
+        </form>
+      <!-- add to handlebars -->
+        <!-- <form id="update-user" class="client-forms">
+          <fieldset>
+            <input type="submit" name="submit" value="Target Player">
+            <input type="text" name='fantasy_player[id]' class="clear-input" placeholder='fantasy id'>
+            <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='player id'>
+            <input type="text" name='fantasy_player[target]' class="clear-input" placeholder='target?'>
+          </fieldset>
+        </form> -->
+    </div>
+        <div class="create-content"></div>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+   </br>
+   <div class="hide-content">
+      </div>
+    </body>
+</html>
