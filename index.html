@@ -41,6 +41,24 @@
           <input type="password" name="passwords[new]" class="input" placeholder="New Password">
         </fieldset>
       </form>
+      <div class="intructions">
+          <button class="instructions-button" name="instructions" type="button">See Instructions</button>
+      </div>
+      <div class="instructions-page">
+        <div class="return-page">
+          <button class="return-button" name="return" type="button">Return</button>
+        </div>
+        <h1 class="instructions-header">
+          Instructions
+        </h1>
+          <ol>
+            <li>Check the pulic resource "show players" to view a list of players</li>
+            <li>Additionally you can search a single player by id</li>
+            <li>Next add a desired player to your list with the add player button</li>
+            <li>Under your saved players(on the right) you can target a specific player(comment when to draft)</li>
+            <li>Finally at any time you can remove a player from your list with the delete button at any time</li>
+          </ol>
+      </div>
     </div>
     </header>
     <!--response one  -->
@@ -64,7 +82,7 @@
             <input type="submit" name="submit" value="Add To My Players">
             <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='id'>
           </fieldset>
-        </form> -->
+        </form> -->>
       </div>
       <!--response two  -->
       <div class="content"></div>
@@ -81,14 +99,14 @@
             <input type="submit" name="submit" value="get your players">
           </fieldset>
         </form>
-        <form id="update-user" class="client-forms">
+        <!-- <form id="update-user" class="client-forms">
           <fieldset>
             <input type="submit" name="submit" value="Target Player">
             <input type="text" name='fantasy_player[id]' class="clear-input" placeholder='fantasy id'>
             <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='player id'>
             <input type="text" name='fantasy_player[target]' class="clear-input" placeholder='target?'>
           </fieldset>
-        </form>
+        </form> -->
     </div>
         <div class="create-content"></div>
       </div>

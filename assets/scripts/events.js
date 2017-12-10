@@ -90,6 +90,12 @@ const onUpdatePlayer = function (event) {
     .catch(ui.updatePlayerFailure)
 }
 
+const hideInstructions = function () {
+  $('.instructions-page').hide()
+}
+
+hideInstructions()
+
 const hideAuthForms = function () {
   $('.auth-content').hide()
 }
@@ -113,9 +119,21 @@ const addHandlers = () => {
   $('#user-players').on('submit', onUserPlayersIndex)
   $('.content').on('submit', '.add-form', onAddUserPlayer)
   $('.create-content').on('submit', '.delete-form', onDeletePlayer)
-  $('#update-user').on('submit', onUpdatePlayer)
+  $('.create-content').on('submit', '.update-form', onUpdatePlayer)
   $('.show-login').on('click', function () {
     $('.login-forms').show()
+  })
+  // show instructions page on click
+  $('.instructions-button').on('click', function (event) {
+    $('.client-area').hide()
+    $('.instructions-button').hide()
+    $('.instructions-page').show()
+  })
+  // hide instructions page on click
+  $('.return-button').on('click', function (event) {
+    $('.client-area').show()
+    $('.instructions-button').show()
+    $('.instructions-page').hide()
   })
 }
 
