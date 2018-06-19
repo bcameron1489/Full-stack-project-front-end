@@ -1,6 +1,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const showAuthForms = require('./templates/auth.hbs')
 // const store = require('./store')
 
 const onSignUp = function (event) {
@@ -108,6 +109,11 @@ const hideClientForms = function () {
 
 hideClientForms()
 
+const renderAuth = function () {
+  const showAuthPage = showAuthForms
+  $('.auth').append(showAuthPage)
+}
+
 // $(event.target).attr(data-id)
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -135,6 +141,7 @@ const addHandlers = () => {
     $('.instructions-button').show()
     $('.instructions-page').hide()
   })
+  $('.auth-button').on('click', renderAuth)
 }
 
 module.exports = {
