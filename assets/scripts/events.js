@@ -109,18 +109,25 @@ const hideClientForms = function () {
 
 hideClientForms()
 
-const renderAuth = function () {
+const renderAuth = function (event) {
+  event.preventDefault()
   const showAuthPage = showAuthForms
   $('.auth').append(showAuthPage)
 }
 
+const renderHome = function () {
+  $('.card').remove()
+  $('.content').show()
+  $('.create-content').show()
+}
+
 // $(event.target).attr(data-id)
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
+  $('.auth').on('submit', '#sign-up', onSignUp)
+  $('.auth').on('submit', '#sign-in', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
-  $('#get-players').on('submit', onGetPlayers)
+  $('.get-players').on('click', onGetPlayers)
   $('#get-single-player').on('submit', onGetSinglePlayer)
   $('#user-players').on('submit', onUserPlayersIndex)
   $('.content').on('submit', '.add-form', onAddUserPlayer)
@@ -142,6 +149,7 @@ const addHandlers = () => {
     $('.instructions-page').hide()
   })
   $('.auth-button').on('click', renderAuth)
+  $('.home-btn').on('click', renderHome)
 }
 
 module.exports = {

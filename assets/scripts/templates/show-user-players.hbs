@@ -1,25 +1,23 @@
 {{#each fantasy_players as |fantasy|}}
 
   <ul class="client-forms" data-id="{{fantasy.id}}">
-    <div> Fantasy_Id: {{fantasy.id}} </div>
-    <div> Player_Id: {{fantasy.player_id}} </div>
     <div> Name: {{fantasy.player.name}} </div>
     <div> Team: {{fantasy.player.team}} </div>
-    <div> Bye: {{fantasy.player.bye}} </div>
-    <div> Target: {{fantasy.target}} </div>
+    <div> Bye Week: {{fantasy.player.bye}} </div>
+    <div> Notes: {{fantasy.target}} </div>
     <div class="update-player">
       <form class="update-form client-forms">
         <fieldset>
-        <input class="target-button" type ="submit" name="submit" data-id="{{fantasy.id}}" value="Target Player"></input>
+        <input class="target-button btn btn-primary" type ="submit" name="submit" data-id="{{fantasy.id}}" value="Target Player"></input>
         <input class="id-value" name='fantasy_player[id]' value="{{fantasy.id}}" type='hidden'>
         <input class="id-value" name="fantasy_player[player_id]" value="{{fantasy.player_id}}" type="hidden"></input>
-        <input type="text" name='fantasy_player[target]' class="clear-input" placeholder='target?'>
+        <input type="text" name='fantasy_player[target]' class="clear-input" placeholder='Player Notes'>
         </fieldset>
       </form>
     </div>
     <div class="delete-resource-player">
       <form class="delete-form">
-        <input class="delete-button" type ="submit" name="submit" data-id="{{fantasy.id}}" value="Delete"></input>
+        <input class="delete-button btn btn-warning" type ="submit" name="submit" data-id="{{fantasy.id}}" value="Delete"></input>
         <input class="id-value" name="id" value="{{fantasy.id}}" type="hidden"></input>
       </form>
     </div>

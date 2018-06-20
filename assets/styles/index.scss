@@ -2,5 +2,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
+  background-color: #eac893;
   min-height: 75rem;
+}
+
+.auth {
+  text-align: center;
+}
+
+.card {
+  padding-bottom: 10px;
+  width: 40rem;
+  margin: 0 auto;
+  float: none;
 }

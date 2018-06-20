@@ -1,19 +1,17 @@
 {{#each players as |player|}}
 
   <ul class="player-form" data-id="{{player.id}}">
-    <div>Id: {{player.id}}</div>
     <div>Name: {{player.name}}</div>
     <div>Team: {{player.team}}</div>
-    <div>Bye: {{player.bye}}</div>
+    <div>Bye Week: {{player.bye}}</div>
       <div class="add-resource-player">
         <form class="add-form">
           <fieldset>
-          <input class="add-button" type ="submit" name="submit" data-id="{{player.id}}" value="Add Player"></input>
+          <input class="add-button btn btn-primary" type ="submit" name="submit" data-id="{{player.id}}" value="Add Player"></input>
           {{!-- <input type="text" name='fantasy_player[player_id]' class="clear-input" placeholder='id'> --}}
           <input class="id-value" name="fantasy_player[player_id]" value="{{player.id}}" type="hidden"></input>
           </fieldset>
         </form>
       </div>
-      <div><button class="remove">hide player</button></div>
     </ul>
 {{/each}}
